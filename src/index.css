@@ -11,6 +11,23 @@ body {
   display: flex;
 }
 
+/* Add appropriate styles to the icon */
+.html-icon {
+  width: 20px; /* Set the desired width */
+  height: 20px; /* Set the desired height */
+  margin-right: 5px; /* Adjust margin if needed */
+}
+.css-icon {
+  width: 20px; /* Set the desired width */
+  height: 20px; /* Set the desired height */
+  margin-right: 5px; /* Adjust margin if needed */
+}
+.js-icon {
+  width: 20px; /* Set the desired width */
+  height: 20px; /* Set the desired height */
+  margin-right: 5px; /* Adjust margin if needed */
+}
+
 .editor-container {
   flex-grow: 1;
   flex-basis: 0;
@@ -38,8 +55,10 @@ body {
 }
 
 .editor-title {
+  align-items:baseline;
+  font-size: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content:flex-start;
   background-color: hsl(225, 6%, 13%);
   color: white;
   padding: .5rem .5rem .5rem 1rem;
