@@ -6,6 +6,9 @@ import 'codemirror/mode/xml/xml';
 import 'codemirror/mode/javascript/javascript';
 import 'codemirror/mode/css/css';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCompressAlt, faExpandAlt } from '@fortawesome/free-solid-svg-icons';
+
 import { ReactComponent as Html5Icon } from '../logos/html-5.svg'; // Replace with your HTML5 SVG icon path
 import { ReactComponent as CssIcon } from '../logos/css.svg'; // Replace with your HTML5 SVG icon path
 import { ReactComponent as JsIcon } from '../logos/js.svg'; // Replace with your HTML5 SVG icon path
@@ -40,15 +43,19 @@ export default function Editor(props) {
     return (
         <div className={`editor-container ${open ? '' : 'collapsed'}`}>
             <div className="editor-title">
-                {getLanguageIcon(language)} {/* Icon representing the language */}
-                {displayName}
+                <div className="language-info">
+                    {getLanguageIcon(language)}
+                    <span className="displayName">{displayName}</span>
+                </div>
+                
                 <button
                     type="button"
                     className="expand-collapse-btn"
                     onClick={() => setOpen(prevOpen => !prevOpen)}
-                >
-                    {/* Expand/Collapse Icon */}
+                    >
+                    <FontAwesomeIcon icon = {open ? faCompressAlt : faExpandAlt } />
                 </button>
+                
             </div>
             <ControlledEditor 
                 onBeforeChange={handleChange}

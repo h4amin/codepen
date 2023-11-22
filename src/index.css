@@ -29,16 +29,22 @@ body {
 }
 
 .editor-container {
+  overflow-x: auto; /* or overflow-x: hidden; */
+  word-wrap: break-word;
+  max-width: 100%; /* Adjust this as needed */
+  min-width: 150px; /* Set a minimum width */
   flex-grow: 1;
+  flex-shrink: 1;
   flex-basis: 0;
-  display: flex;
+  display:flex;
   flex-direction: column;
   padding: .5rem;
   background-color: hsl(225, 6%, 25%);
+  /* overflow: hidden !important;  */
 }
 
 .editor-container.collapsed {
-  flex-grow: 0;
+  flex-grow:0;
 }
 
 .editor-container.collapsed .CodeMirror-scroll {
@@ -47,7 +53,7 @@ body {
 }
 
 .expand-collapse-btn {
-  margin-left: .5rem;
+  margin-left: 0.5rem;
   background: none;
   border: none;
   color: white;
@@ -55,15 +61,22 @@ body {
 }
 
 .editor-title {
-  align-items:baseline;
-  font-size: 10px;
   display: flex;
-  justify-content:flex-start;
+  justify-content: space-between; /* Aligns items at start and end */
+  align-items: baseline;
+  font-size: 10px;
   background-color: hsl(225, 6%, 13%);
   color: white;
-  padding: .5rem .5rem .5rem 1rem;
+  padding: .5rem 1rem; /* Adjusted padding for better spacing */
   border-top-right-radius: .5rem;
   border-top-left-radius: .5rem;
+}
+.language-info {
+  display: flex; /* Aligns logos and text */
+  align-items: center; /* Vertically aligns items */
+}
+.displayName {
+  margin-right: 5px;
 }
 
 .CodeMirror {
@@ -74,6 +87,7 @@ body {
   flex-grow: 1;
   border-bottom-right-radius: .5rem;
   border-bottom-left-radius: .5rem;
-  overflow: hidden;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  max-width: 100%; /* Limit the maximum width */
 }
 
